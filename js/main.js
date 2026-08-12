@@ -155,7 +155,7 @@ const projectData = {
       'Engineered Fuzzy Analytical Hierarchy Process (FAHP) combined with offline local LLMs (Ollama / LangChain) to autonomously adjust spatial weights.',
       'Delivered Explainable GeoAI justifications alongside Streamlit, PyQt, and interactive Folium geospatial visualizations.'
     ],
-    tech: ['Python', 'LangChain', 'Ollama LLM', 'FAHP', 'GDAL', 'Streamlit', 'Folium', 'PyQt']
+    tech: ['Python', 'LangChain', 'Ollama LLM', 'FAHP', 'GDAL', 'Streamlit', 'Folium', 'PyQt', 'TiTiler', 'FastAPI']
   },
   'ship-detection': {
     title: 'ArcGIS Pro Add-In for AI Ship Detection',
