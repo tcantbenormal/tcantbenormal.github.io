@@ -147,7 +147,7 @@ const projectData = {
   'aqua-assist': {
     title: 'AquaAssist: GeoAI Spatial Decision Support System',
     category: 'GeoAI & Spatial Decision Support',
-    img: 'assets/images/aqua_assist_sdss.png',
+    img: 'assets/images/aqua_assist_sdss.jpg',
     github: 'https://github.com/tcantbenormal',
     bullets: [
       'Architected an agentic SDSS with a dual-pipeline framework evaluating Rainwater Harvesting (RWH) suitability across administrative boundaries.',
