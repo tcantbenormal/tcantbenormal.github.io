@@ -211,7 +211,7 @@ const projectData = {
   'salinity-chakwal': {
     title: 'Salt-Affected Soil Spectral Mapping (Chakwal)',
     category: 'Remote Sensing & Spectral Indices',
-    img: '',
+    img: 'assets/images/sas_studyarea.png',
     github: 'https://github.com/tcantbenormal',
     bullets: [
       'Mapped salt-affected soils in Chakwal district using satellite spectral indices (NDSI, NDVI, VSSI, SI1–SI4).',
