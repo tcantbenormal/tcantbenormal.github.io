@@ -256,6 +256,20 @@ const projectData = {
       'Packaged into a standalone executable using PyInstaller for hassle-free distribution.'
     ],
     tech: ['Python Tkinter', 'PyProj', 'SimpleKML', 'PyInstaller', 'Geospatial Converter']
+  },
+  'ngcp-infrastructure': {
+    title: 'Digitization of NGCP Infrastructure Data & Disaster Risk Analysis',
+    category: 'Spatial Analysis & Disaster Risk',
+    img: 'assets/images/ngcp_cyclones.png',
+    github: '#',
+    bullets: [
+      'Digitized nationwide energy infrastructure spatial data for the National Disaster Risk Management Fund (NDRMF).',
+      'Conducted extensive multi-hazard disaster risk assessments, analyzing infrastructure vulnerability against cyclones and floods.',
+      'Produced comprehensive analytical reports to guide climate-resilient infrastructure investments.'
+    ],
+    tech: ['Disaster Risk Analysis', 'Spatial Digitization', 'Infrastructure Vulnerability', 'QGIS / ArcGIS'],
+    slideshow: 'https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/assets/docs/Digitization_of_NGCP_Infrastructure_Data.pptx',
+    report: 'assets/docs/Energy_Sector_Report.docx'
   }
 };
 
@@ -292,9 +306,8 @@ function openProjectModal(key) {
       ${techHtml}
     </div>
     <div style="display:flex; gap:1rem; border-top:1px solid var(--border-light); padding-top:1.25rem;">
-      <a href="${data.github}" target="_blank" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.875rem;">
-        <i class="fa-brands fa-github"></i> Open Code / Repository
-      </a>
+      ${data.report ? `<a href="${data.report}" target="_blank" class="btn btn-secondary" style="padding:0.6rem 1.2rem; font-size:0.875rem;"><i class="fa-solid fa-file-word"></i> Read Report</a>` : ''}
+      ${data.github && data.github !== '#' ? `<a href="${data.github}" target="_blank" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.875rem;"><i class="fa-brands fa-github"></i> Open Code / Repository</a>` : ''}
       <button class="btn btn-secondary" onclick="closeProjectModal()" style="padding:0.6rem 1.2rem; font-size:0.875rem;">
         Close Window
       </button>
