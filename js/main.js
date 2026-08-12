@@ -186,7 +186,7 @@ const projectData = {
   'rusle-tarbela': {
     title: 'RUSLE Soil Erosion & Tarbela Reservoir Sedimentation',
     category: 'Remote Sensing & Hydrology',
-    img: 'assets/images/tarbela_erosion_model.png',
+    img: 'assets/images/tarbela_studyarea.png',
     github: 'https://link.springer.com/article/10.1007/s41742-025-01017-w',
     bullets: [
       'Designed a Python-based GIS tool modeling soil erosion and sedimentation trends in the Tarbela Reservoir over three decades using RUSLE.',
