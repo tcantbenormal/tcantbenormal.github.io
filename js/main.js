@@ -224,8 +224,10 @@ const projectData = {
   'nsdi-roads': {
     title: 'Pakistan NSDI Road Network Digitization',
     category: 'Spatial Data Infrastructures',
-    img: '',
+    img: 'assets/images/nsdi_studyarea.png',
     github: 'https://github.com/tcantbenormal',
+    report: 'assets/docs/Pakistan_SDI_Report.docx',
+    slideshow: 'https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/assets/docs/Pakistan_SDI.pptx',
     bullets: [
       'Developed a refined road network dataset as a foundational component of Pakistan’s National Spatial Data Infrastructure (NSDI).',
       'Resolved road fragmentation, metadata gaps, and misaligned geometries through rigorous topology validation rules.',
