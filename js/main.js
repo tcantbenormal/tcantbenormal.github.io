@@ -236,8 +236,9 @@ const projectData = {
   'glof-shishper': {
     title: 'GLOF Disaster Assessment: Shishper Glacier',
     category: 'Disaster Risk & Multi-Sensor RS',
-    img: '',
+    img: 'assets/images/shishper_glacier_studyarea.png',
     github: 'https://github.com/tcantbenormal',
+    report: 'assets/docs/final_report_RSG-609.docx',
     bullets: [
       'Analyzed the 2022 Shishper Glacier outburst flood event using Landsat-8/9, Sentinel-2, MODIS, and ALOS PALSAR radar data.',
       'Mapped thermal and debris changes identifying rapid glacier melt triggers.',
