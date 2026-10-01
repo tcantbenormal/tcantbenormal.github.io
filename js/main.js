@@ -4,89 +4,25 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initGeoCanvas();
   initNavbar();
   initProjectFilters();
 });
 
 /* ==========================================================================
-   1. Interactive HTML5 Geospatial Coordinate Canvas
-   ========================================================================== */
-function initGeoCanvas() {
-  const canvas = document.getElementById('geo-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-
-  const nodeCount = Math.floor((width * height) / 22000);
-  const nodes = [];
-
-  for (let i = 0; i < nodeCount; i++) {
-    nodes.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      radius: Math.random() * 2 + 1,
-      alpha: Math.random() * 0.5 + 0.2
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Draw connecting lines
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 130) {
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = `rgba(16, 185, 129, ${0.15 * (1 - dist / 130)})`;
-          ctx.lineWidth = 0.75;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw nodes
-    nodes.forEach(node => {
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(16, 185, 129, ${node.alpha})`;
-      ctx.fill();
-
-      node.x += node.vx;
-      node.y += node.vy;
-
-      if (node.x < 0 || node.x > width) node.vx *= -1;
-      if (node.y < 0 || node.y > height) node.vy *= -1;
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-}
-
-/* ==========================================================================
-   2. Navbar Scroll Behavior & ScrollSpy
+   1. Navbar Scroll Behavior & ScrollSpy
    ========================================================================== */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('nav-links');
+
+  toggle?.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.forEach(l => l.addEventListener('click', () => menu.classList.remove('open')));
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -113,7 +49,7 @@ function initNavbar() {
 }
 
 /* ==========================================================================
-   3. Project Filter Tabs Logic
+   2. Project Filter Tabs Logic
    ========================================================================== */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-tab');
@@ -141,7 +77,7 @@ function initProjectFilters() {
 }
 
 /* ==========================================================================
-   4. Project Modal Data & Handler
+   3. Project Modal Data & Handler
    ========================================================================== */
 const projectData = {
   'aqua-assist': {
@@ -219,7 +155,7 @@ const projectData = {
       'Classified land into low (15,222 ha), moderate (112 ha), and high (209 ha) salinity zonation maps.'
     ],
     tech: ['Sentinel-2', 'Landsat 8/9', 'ArcGIS Pro', 'Spectral Indices', 'Soil Zonation'],
-    slideshow: 'https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/assets/docs/FINAL_PRESENTATION_NRM.pptx'
+    pptx: 'assets/docs/FINAL_PRESENTATION_NRM.pptx'
   },
   'nsdi-roads': {
     title: 'Pakistan NSDI Road Network Digitization',
@@ -227,7 +163,7 @@ const projectData = {
     img: 'assets/images/nsdi_studyarea.png',
     github: 'https://github.com/tcantbenormal',
     report: 'assets/docs/Pakistan_SDI_Report.docx',
-    slideshow: 'https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/assets/docs/Pakistan_SDI.pptx',
+    pptx: 'assets/docs/Pakistan_SDI.pptx',
     bullets: [
       'Developed a refined road network dataset as a foundational component of Pakistan’s National Spatial Data Infrastructure (NSDI).',
       'Resolved road fragmentation, metadata gaps, and misaligned geometries through rigorous topology validation rules.',
@@ -271,7 +207,7 @@ const projectData = {
       'Produced comprehensive analytical reports to guide climate-resilient infrastructure investments.'
     ],
     tech: ['Disaster Risk Analysis', 'Spatial Digitization', 'Infrastructure Vulnerability', 'QGIS / ArcGIS'],
-    slideshow: 'https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/assets/docs/Digitization_of_NGCP_Infrastructure_Data.pptx',
+    pptx: 'assets/docs/Digitization_of_NGCP_Infrastructure_Data.pptx',
     report: 'assets/docs/Energy_Sector_Report.docx'
   }
 };
@@ -283,47 +219,44 @@ function openProjectModal(key) {
   const modal = document.getElementById('project-modal');
   const container = document.getElementById('modal-content');
 
-  let imageHtml = data.img ? `<img src="${data.img}" alt="${data.title}" style="width:100%; max-height:280px; object-fit:cover; border-radius: var(--radius-md); margin-bottom: 1.25rem; border: 1px solid var(--border-light);">` : '';
-  
-  let slideshowHtml = data.slideshow ? `
-    <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem; color:var(--accent-emerald);">Project Presentation:</h4>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-      <iframe src="${data.slideshow}" width="100%" height="100%" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+  const imageHtml = data.img ? `<img class="modal-img" src="${data.img}" alt="${data.title}">` : '';
+
+  const slideshowHtml = data.pptx ? `
+    <h4 class="modal-sub">Project Presentation</h4>
+    <div class="modal-embed">
+      <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://tcantbenormal.github.io/${data.pptx}" loading="lazy" title="${data.title} slides"></iframe>
     </div>
-    <div style="font-size:0.8rem; color:var(--text-sub); margin-bottom:1.5rem; margin-top:-1rem;">* Slideshow will load once the site is live on GitHub Pages. <a href="assets/docs/FINAL_PRESENTATION_NRM.pptx" style="color:var(--accent-emerald); text-decoration:underline;">Download PPTX</a></div>
+    <div class="modal-embed-note">Embedded via Office viewer. <a href="${data.pptx}">Download PPTX</a></div>
   ` : '';
 
-  let bulletsHtml = data.bullets.map(b => `<li style="margin-bottom:0.5rem;">${b}</li>`).join('');
-  let techHtml = data.tech.map(t => `<span class="project-tag" style="background:rgba(16,185,129,0.1); color:var(--accent-emerald); border:1px solid rgba(16,185,129,0.3); font-size:0.8rem; padding:0.25rem 0.6rem;">${t}</span>`).join('');
+  const bulletsHtml = data.bullets.map(b => `<li>${b}</li>`).join('');
+  const techHtml = data.tech.map(t => `<span class="project-tag">${t}</span>`).join('');
 
   container.innerHTML = `
-    <span class="section-tag" style="margin-bottom:0.5rem;">${data.category}</span>
-    <h2 style="font-size:1.6rem; font-weight:800; margin-bottom:1rem;">${data.title}</h2>
+    <span class="section-tag">${data.category}</span>
+    <h2 class="modal-h">${data.title}</h2>
     ${imageHtml}
     ${slideshowHtml}
-    <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem; color:var(--accent-emerald);">Key Engineering Highlights:</h4>
-    <ul style="padding-left:1.2rem; font-size:0.9rem; color:var(--text-sub); margin-bottom:1.5rem;">
-      ${bulletsHtml}
-    </ul>
-    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem;">
-      ${techHtml}
-    </div>
-    <div style="display:flex; gap:1rem; border-top:1px solid var(--border-light); padding-top:1.25rem;">
-      ${data.report ? `<a href="${data.report}" target="_blank" class="btn btn-secondary" style="padding:0.6rem 1.2rem; font-size:0.875rem;"><i class="fa-solid fa-file-word"></i> Read Report</a>` : ''}
-      ${data.github && data.github !== '#' ? `<a href="${data.github}" target="_blank" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.875rem;"><i class="fa-brands fa-github"></i> Open Code / Repository</a>` : ''}
-      <button class="btn btn-secondary" onclick="closeProjectModal()" style="padding:0.6rem 1.2rem; font-size:0.875rem;">
-        Close Window
-      </button>
+    <h4 class="modal-sub">Key Engineering Highlights</h4>
+    <ul class="modal-list">${bulletsHtml}</ul>
+    <div class="modal-tags">${techHtml}</div>
+    <div class="modal-actions">
+      ${data.report ? `<a href="${data.report}" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-word"></i> Read Report</a>` : ''}
+      ${data.github && data.github !== '#' ? `<a href="${data.github}" target="_blank" class="btn btn-primary btn-sm"><i class="fa-brands fa-github"></i> Open Code / Repository</a>` : ''}
+      <button class="btn btn-secondary btn-sm" onclick="closeProjectModal()">Close</button>
     </div>
   `;
 
   modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
-  const modal = document.getElementById('project-modal');
-  modal.classList.remove('active');
+  document.getElementById('project-modal').classList.remove('active');
+  document.body.style.overflow = '';
 }
+
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProjectModal(); });
 
 /* Close modal when clicking background overlay */
 document.getElementById('project-modal')?.addEventListener('click', (e) => {
@@ -333,7 +266,7 @@ document.getElementById('project-modal')?.addEventListener('click', (e) => {
 });
 
 /* ==========================================================================
-   5. Copy Email Toast Notification
+   4. Copy Email Toast Notification
    ========================================================================== */
 function copyContactEmail() {
   const email = 'malik.taimoor2001@gmail.com';

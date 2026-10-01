@@ -4,22 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Taimoor Ashfaq Malik | GIS & GeoAI Specialist</title>
+  <title>Muhammad Taimoor Ashfaq Malik | Web GIS Developer & GeoAI Engineer</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description"
-    content="Portfolio of Muhammad Taimoor Ashfaq Malik (tcantbenormal) - GIS & Remote Sensing Specialist, GeoAI Developer, and Geospatial Software Engineer specializing in Spatial Decision Support Systems, ArcGIS Pro SDK, and PyTorch satellite analysis.">
+    content="Portfolio of Muhammad Taimoor Ashfaq Malik (tcantbenormal) - Web GIS Developer at HeraldX (Herald Analytics), GeoAI developer, and remote sensing specialist building web mapping platforms, spatial decision support systems, and ArcGIS Pro SDK tools.">
   <meta name="keywords"
-    content="GIS, GeoAI, Remote Sensing, Taimoor Ashfaq, tcantbenormal, ArcGIS Pro SDK, PostGIS, PyTorch, Spatial MCDA, FAHP, Python GIS">
+    content="Web GIS, GIS, GeoAI, Remote Sensing, Taimoor Ashfaq, tcantbenormal, HeraldX, Herald Analytics, MapLibre, React, GeoServer, ArcGIS Pro SDK, PostGIS, PyTorch, Spatial MCDA, FAHP, Python GIS">
   <meta name="author" content="Muhammad Taimoor Ashfaq Malik">
 
   <!-- Open Graph / Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tcantbenormal.github.io/">
-  <meta property="og:title" content="Muhammad Taimoor Ashfaq Malik | GIS & GeoAI Portfolio">
+  <meta property="og:title" content="Muhammad Taimoor Ashfaq Malik | Web GIS & GeoAI Portfolio">
   <meta property="og:description"
-    content="Spatial Decision Support Systems, GeoAI pipelines, ArcGIS Pro SDK Add-Ins, & Satellite Remote Sensing Analytics.">
+    content="Web GIS Developer at HeraldX. Web mapping platforms, Spatial Decision Support Systems, GeoAI pipelines, ArcGIS Pro SDK Add-Ins, and satellite remote sensing analytics.">
   <meta property="og:image" content="assets/images/aqua_assist_sdss.png">
+
+  <!-- Favicon -->
+
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e7c6b'/%3E%3Cpath d='M16 7a6 6 0 0 0-6 6c0 4.5 6 12 6 12s6-7.5 6-12a6 6 0 0 0-6-6zm0 8.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z' fill='white'/%3E%3C/svg%3E">
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,9 +43,6 @@
 
 <body>
 
-  <!-- Interactive HTML5 Background Canvas -->
-  <canvas id="geo-canvas"></canvas>
-
   <div class="content-wrapper">
 
     <!-- Navbar -->
@@ -50,11 +53,11 @@
         </a>
 
         <nav>
-          <ul class="nav-links">
+          <ul class="nav-links" id="nav-links">
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#publications" class="nav-link">Research</a></li>
-            <li><a href="#experience" class="nav-link">Timeline</a></li>
+            <li><a href="#publications" class="nav-link">Publication</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#certifications" class="nav-link">Certifications</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -62,14 +65,18 @@
         </nav>
 
         <div class="nav-cta">
-          <a href="assets/docs/Taimoor_Ashfaq_CV_v2.pdf" target="_blank" class="btn btn-outline"
-            style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+          <a href="assets/docs/Taimoor_Ashfaq_CV_v2.pdf" target="_blank" class="btn btn-outline btn-sm">
             <i class="fa-solid fa-file-arrow-down"></i> Resume
           </a>
-          <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+          <a href="#contact" class="btn btn-primary btn-sm">
             Get in Touch
           </a>
         </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false"
+          aria-controls="nav-links">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </header>
 
@@ -79,7 +86,7 @@
         <div class="hero-content">
           <div class="status-badge">
             <span class="status-dot"></span>
-            Open to GIS, Remote Sensing & GeoAI Opportunities
+            Web GIS Developer at <strong>HeraldX</strong> &middot; Islamabad
           </div>
 
           <h1 class="hero-title">
@@ -88,20 +95,20 @@
           </h1>
 
           <p class="hero-subtitle">
-            <strong>GIS & Remote Sensing Specialist | GeoAI Developer | Geospatial Software Engineer</strong><br>
-            Architecting Spatial Decision Support Systems, custom ArcGIS Pro .NET SDK extensions, satellite remote
-            sensing pipelines, and agentic GeoAI analytics.
+            <strong>Web GIS Developer | GeoAI & Remote Sensing | Geospatial Software Engineer</strong><br>
+            Building web mapping platforms, spatial decision support systems, ArcGIS Pro SDK extensions, and
+            satellite remote sensing pipelines.
           </p>
 
           <div class="hero-pills">
             <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
-            <span class="tech-pill"><i class="fa-solid fa-code"></i> C# / .NET 8</span>
-            <span class="tech-pill"><i class="fa-solid fa-map-location-dot"></i> ArcGIS Pro SDK</span>
-            <span class="tech-pill"><i class="fa-solid fa-brain"></i> PyTorch (YOLOv5)</span>
-            <span class="tech-pill"><i class="fa-solid fa-robot"></i> LangChain / Ollama</span>
+            <span class="tech-pill"><i class="fa-brands fa-react"></i> React / MapLibre</span>
             <span class="tech-pill"><i class="fa-solid fa-database"></i> PostGIS</span>
-            <span class="tech-pill"><i class="fa-solid fa-satellite-dish"></i> GEE</span>
-            <span class="tech-pill"><i class="fa-solid fa-layer-group"></i> GDAL / ArcPy</span>
+            <span class="tech-pill"><i class="fa-solid fa-server"></i> GeoServer / FastAPI</span>
+            <span class="tech-pill"><i class="fa-solid fa-map-location-dot"></i> ArcGIS Pro SDK</span>
+            <span class="tech-pill"><i class="fa-solid fa-brain"></i> PyTorch</span>
+            <span class="tech-pill"><i class="fa-solid fa-robot"></i> LangChain / Ollama</span>
+            <span class="tech-pill"><i class="fa-solid fa-satellite-dish"></i> Google Earth Engine</span>
           </div>
 
           <div class="hero-actions">
@@ -119,29 +126,26 @@
 
         <!-- Hero Profile & Stats Card Widget -->
         <div class="hero-card-widget">
-          <div class="widget-radar"></div>
-          <div class="profile-avatar-wrapper">
-            <div class="profile-avatar-inner">TA</div>
-          </div>
+          <img class="profile-avatar" src="assets/images/taimoor_dp.png" alt="Portrait of Muhammad Taimoor Ashfaq Malik" width="128" height="128">
 
           <h3 class="hero-widget-name">M. Taimoor Ashfaq</h3>
           <div class="hero-widget-location">
-            <i class="fa-solid fa-location-dot" style="color: var(--accent-emerald);"></i>
+            <i class="fa-solid fa-location-dot"></i>
             Islamabad / Rawalpindi, Pakistan
           </div>
 
-          <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1.25rem;">
-            M.S. Remote Sensing & GIS Candidate at <strong>NUST</strong>.<br>
-            Specializing in spatial MCDA, hazard risk modeling, & GeoAI software.
+          <p class="hero-widget-bio">
+            Web GIS Developer at <strong>HeraldX</strong> (Herald Analytics) and M.S. Remote Sensing & GIS
+            candidate at <strong>NUST</strong>. Spatial MCDA, hazard risk modeling, and GeoAI software.
           </p>
 
           <div class="widget-mini-stats">
             <div class="mini-stat-item">
-              <div class="mini-stat-num"><i class="fa-solid fa-laptop-code"></i></div>
-              <div class="mini-stat-lbl">GIS Dev</div>
+              <div class="mini-stat-num">5</div>
+              <div class="mini-stat-lbl">Roles</div>
             </div>
             <div class="mini-stat-item">
-              <div class="mini-stat-num">9+</div>
+              <div class="mini-stat-num">10</div>
               <div class="mini-stat-lbl">Projects</div>
             </div>
             <div class="mini-stat-item">
@@ -156,27 +160,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-      <div class="container stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">09+</div>
-          <div class="stat-label">Geospatial & GeoAI Projects</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">04</div>
-          <div class="stat-label">Professional Experiences</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">06</div>
-          <div class="stat-label">Verified Certifications</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">01</div>
-          <div class="stat-label">Peer-Reviewed Journal Publication</div>
-        </div>
-      </div>
     </div>
 
     <!-- About Section & 4 Pillars -->
@@ -187,14 +170,22 @@
           <h2 class="section-title">Bridging Geospatial Science & <span class="text-gradient">Artificial
               Intelligence</span></h2>
           <p class="section-desc">
-            Passionate about building scalable geospatial software, automating complex geoprocessing workflows, and
-            leveraging AI/LLM technologies to empower spatial decision-making across disaster management, hydrology, and
-            urban planning.
+            I build web mapping platforms and geospatial software, automate geoprocessing workflows, and apply
+            AI/LLM tooling to spatial decision-making across disaster management, hydrology, and urban planning.
           </p>
         </div>
 
         <div class="pillars-grid">
-          <div class="pillar-card">
+          <div class="pillar-card card">
+            <div class="pillar-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3 class="pillar-title">Web GIS & Spatial Data Infrastructure</h3>
+            <p class="pillar-desc">
+              Building interactive web mapping applications with React, MapLibre, OpenLayers, and Leaflet on
+              PostGIS, GeoServer, and TiTiler backends. Topology validation and data modelling for Pakistan's
+              National Spatial Data Infrastructure (NSDI).
+            </p>
+          </div>
+          <div class="pillar-card card">
             <div class="pillar-icon"><i class="fa-solid fa-brain"></i></div>
             <h3 class="pillar-title">GeoAI & Machine Learning</h3>
             <p class="pillar-desc">
@@ -203,7 +194,7 @@
             </p>
           </div>
 
-          <div class="pillar-card">
+          <div class="pillar-card card">
             <div class="pillar-icon"><i class="fa-solid fa-laptop-code"></i></div>
             <h3 class="pillar-title">ArcGIS Pro SDK & Desktop Tools</h3>
             <p class="pillar-desc">
@@ -212,7 +203,7 @@
             </p>
           </div>
 
-          <div class="pillar-card">
+          <div class="pillar-card card">
             <div class="pillar-icon"><i class="fa-solid fa-satellite"></i></div>
             <h3 class="pillar-title">Remote Sensing & Hydrology</h3>
             <p class="pillar-desc">
@@ -220,17 +211,6 @@
               index mapping (Landsat/Sentinel-2), GEE satellite batch processing, and GLOF disaster risk assessment.
             </p>
           </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon"><i class="fa-solid fa-network-wired"></i></div>
-            <h3 class="pillar-title">Spatial Data Infrastructures & Web GIS</h3>
-            <p class="pillar-desc">
-              Architecting PostGIS spatial databases, topology validation for Pakistan’s National Spatial Data
-              Infrastructure (NSDI), and building responsive web mapping dashboards using React.js, Leaflet, and
-              OpenLayers.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -259,7 +239,7 @@
         <div class="projects-grid">
 
           <!-- Project 1: AquaAssist -->
-          <div class="project-card" data-category="geoai web-tools">
+          <div class="project-card card" data-category="geoai web-tools">
             <div class="project-img-wrapper">
               <img src="assets/images/aqua_assist_sdss.jpg" alt="AquaAssist SDSS" class="project-img">
               <span class="project-category-badge">GeoAI / SDSS</span>
@@ -282,7 +262,7 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('aqua-assist')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
                 <a href="https://github.com/tcantbenormal" target="_blank" class="project-link-btn">
                   <i class="fa-brands fa-github"></i> GitHub
@@ -292,7 +272,7 @@
           </div>
 
           <!-- Project 2: AI Ship Detection -->
-          <div class="project-card" data-category="geoai addin">
+          <div class="project-card card" data-category="geoai addin">
             <div class="project-img-wrapper">
               <img src="assets/images/arcgis_ship_detection.png" alt="ArcGIS Ship Detection" class="project-img">
               <span class="project-category-badge">ArcGIS Pro Add-In</span>
@@ -313,7 +293,7 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('ship-detection')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
                 <a href="https://github.com/tcantbenormal" target="_blank" class="project-link-btn">
                   <i class="fa-brands fa-github"></i> GitHub
@@ -323,7 +303,7 @@
           </div>
 
           <!-- Project 3: AHP FAHP Analyzer Add-in -->
-          <div class="project-card" data-category="addin">
+          <div class="project-card card" data-category="addin">
             <div class="project-img-wrapper">
               <img src="assets/images/ahp_fahp_analyzer.png" alt="AHP FAHP Analyzer Add-in" class="project-img">
               <span class="project-category-badge">ArcGIS Pro Add-In</span>
@@ -343,7 +323,7 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('ahp-analyzer')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
                 <a href="https://github.com/tcantbenormal/Ahp-Fahp-Analyzer-For-ArcGIS-Pro" target="_blank"
                   class="project-link-btn">
@@ -354,7 +334,7 @@
           </div>
 
           <!-- Project 4: RUSLE Tarbela Sedimentation -->
-          <div class="project-card" data-category="rs">
+          <div class="project-card card" data-category="rs">
             <div class="project-img-wrapper">
               <img src="assets/images/tarbela_studyarea.png" alt="Tarbela Soil Erosion" class="project-img">
               <span class="project-category-badge">Remote Sensing</span>
@@ -374,7 +354,7 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('rusle-tarbela')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
                 <a href="#publications" class="project-link-btn">
                   <i class="fa-solid fa-book-bookmark"></i> Paper
@@ -384,7 +364,7 @@
           </div>
 
           <!-- Project 5: NGCP Infrastructure & Disaster Risk Analysis -->
-          <div class="project-card" data-category="rs web-tools">
+          <div class="project-card card" data-category="rs web-tools">
             <div class="project-img-wrapper">
               <img src="assets/images/ngcp_cyclones.png" alt="NGCP Infrastructure Data and Disaster Risk Analysis"
                 class="project-img">
@@ -404,18 +384,14 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('ngcp-infrastructure')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
-                </button>
-                <button class="project-link-btn" onclick="openProjectModal('ngcp-infrastructure')"
-                  style="margin-left: 0.5rem;">
-                  <i class="fa-solid fa-presentation-screen"></i> Slides & Report
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 6: Salt Affected Soil Mapping -->
-          <div class="project-card" data-category="rs">
+          <div class="project-card card" data-category="rs">
             <div class="project-img-wrapper">
               <img src="assets/images/sas_studyarea.png" alt="Salt Affected Soil Mapping" class="project-img">
               <span class="project-category-badge">Spectral Indices</span>
@@ -434,18 +410,14 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('salinity-chakwal')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
-                </button>
-                <button class="project-link-btn" onclick="openProjectModal('salinity-chakwal')"
-                  style="margin-left: 0.5rem;">
-                  <i class="fa-solid fa-presentation-screen"></i> Slides
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 7: NSDI Road Network -->
-          <div class="project-card" data-category="web-tools">
+          <div class="project-card card" data-category="web-tools">
             <div class="project-img-wrapper">
               <img src="assets/images/nsdi_studyarea.png" alt="Pakistan NSDI Road Network" class="project-img">
               <span class="project-category-badge">NSDI Infrastructure</span>
@@ -464,17 +436,14 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('nsdi-roads')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
-                </button>
-                <button class="project-link-btn" onclick="openProjectModal('nsdi-roads')" style="margin-left: 0.5rem;">
-                  <i class="fa-solid fa-file-word"></i> Report
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 8: GLOF Shishper Glacier -->
-          <div class="project-card" data-category="rs">
+          <div class="project-card card" data-category="rs">
             <div class="project-img-wrapper">
               <img src="assets/images/shishper_glacier_studyarea.png" alt="Shishper Glacier GLOF Assessment"
                 class="project-img">
@@ -494,23 +463,16 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('glof-shishper')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
-                </button>
-                <button class="project-link-btn" onclick="openProjectModal('glof-shishper')"
-                  style="margin-left: 0.5rem;">
-                  <i class="fa-solid fa-file-word"></i> Report
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 9: Shapefile to KML -->
-          <div class="project-card" data-category="web-tools">
+          <div class="project-card card" data-category="web-tools">
             <div class="project-img-wrapper">
-              <div
-                style="width:100%; height:100%; background: linear-gradient(135deg, #1f102e, #3a1c57); display:flex; align-items:center; justify-content:center; color: var(--accent-purple); font-size:3rem;">
-                <i class="fa-solid fa-file-export"></i>
-              </div>
+              <div class="project-img-placeholder"><i class="fa-solid fa-file-export"></i></div>
               <span class="project-category-badge">Desktop App</span>
             </div>
             <div class="project-body">
@@ -527,19 +489,16 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('shp-kml')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 10: Rainwater Harvesting Zonation KPK -->
-          <div class="project-card" data-category="rs">
+          <div class="project-card card" data-category="rs">
             <div class="project-img-wrapper">
-              <div
-                style="width:100%; height:100%; background: linear-gradient(135deg, #09201a, #0b3c32); display:flex; align-items:center; justify-content:center; color: var(--accent-emerald); font-size:3rem;">
-                <i class="fa-solid fa-droplet"></i>
-              </div>
+              <div class="project-img-placeholder"><i class="fa-solid fa-droplet"></i></div>
               <span class="project-category-badge">MCDA / GEE</span>
             </div>
             <div class="project-body">
@@ -556,7 +515,7 @@
               </div>
               <div class="project-footer">
                 <button class="project-link-btn" onclick="openProjectModal('rwh-kpk')">
-                  <i class="fa-solid fa-circle-info"></i> Full Details
+                  <i class="fa-solid fa-circle-info"></i> Details
                 </button>
               </div>
             </div>
@@ -574,7 +533,7 @@
           <h2 class="section-title">Published <span class="text-gradient">Journal Article</span></h2>
         </div>
 
-        <div class="pub-card">
+        <div class="pub-card card">
           <div>
             <div class="pub-badge">
               <i class="fa-solid fa-award"></i> Springer Nature | International Journal of Environmental Research (2026)
@@ -587,7 +546,7 @@
               Muhammad Arif Goheer, Sher Shah Hassan, <strong>Muhammad Taimoor Ashfaq Malik</strong>, Syeda Rosheen Raza
               Kazmi, Syed Zee Ali Shan
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-sub); margin-top: 0.75rem; line-height: 1.6;">
+            <p class="pub-abstract">
               Designed and implemented a Python-based GIS tool modeling 30 years of soil loss and reservoir storage
               depletion in Tarbela Reservoir. Results quantified a 65% capacity reduction due to sediment inflow,
               providing critical data for national climate adaptation policy in Pakistan.
@@ -608,7 +567,7 @@
       <div class="container">
         <div class="section-header center">
           <span class="section-tag"><i class="fa-solid fa-timeline"></i> Career Journey</span>
-          <h2 class="section-title">Experience & <span class="text-gradient">Education Timeline</span></h2>
+          <h2 class="section-title">Experience & <span class="text-gradient">Education</span></h2>
         </div>
 
         <div class="timeline-grid">
@@ -619,11 +578,25 @@
               <i class="fa-solid fa-briefcase"></i> Work Experience
             </h3>
             <div class="timeline-items">
+              <div class="timeline-item current">
+                <div class="timeline-node"></div>
+                <div class="timeline-card card">
+                  <div class="timeline-date">2026 – Present</div>
+                  <h4 class="timeline-role">Web GIS Developer</h4>
+                  <div class="timeline-org">HeraldX (Herald Analytics) | Islamabad, Pakistan</div>
+                  <ul class="timeline-bullets">
+                    <li>Developing interactive web GIS applications and geospatial dashboards for analytics products.</li>
+                    <li>Building map front-ends with React and MapLibre / OpenLayers backed by PostGIS and GeoServer.</li>
+                    <li>Designing spatial data pipelines and APIs that serve vector and raster layers to the web.</li>
+                  </ul>
+                </div>
+              </div>
+
 
               <div class="timeline-item">
                 <div class="timeline-node"></div>
-                <div class="timeline-card">
-                  <div class="timeline-date">Oct 2025 – Present</div>
+                <div class="timeline-card card">
+                  <div class="timeline-date">Oct 2025 – 2026</div>
                   <h4 class="timeline-role">Junior GIS Analyst</h4>
                   <div class="timeline-org">Nook Office Solutions | Islamabad, Pakistan</div>
                   <ul class="timeline-bullets">
@@ -638,7 +611,7 @@
 
               <div class="timeline-item">
                 <div class="timeline-node"></div>
-                <div class="timeline-card">
+                <div class="timeline-card card">
                   <div class="timeline-date">June 2025 – Sept 2025</div>
                   <h4 class="timeline-role">GIS Intern</h4>
                   <div class="timeline-org">National Disaster Risk Management Fund (NDRMF) | Islamabad</div>
@@ -653,7 +626,20 @@
 
               <div class="timeline-item">
                 <div class="timeline-node"></div>
-                <div class="timeline-card">
+                <div class="timeline-card card">
+                  <div class="timeline-date">June 2024 – Aug 2024</div>
+                  <h4 class="timeline-role">Cadastral Mapping Intern</h4>
+                  <div class="timeline-org">Gravity Solutions | Rawalpindi</div>
+                  <ul class="timeline-bullets">
+                    <li>Digitized land parcel boundaries & conducted topology error removal.</li>
+                    <li>Developed Python automation scripts for parcel database management.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card card">
                   <div class="timeline-date">June 2023 – July 2024</div>
                   <h4 class="timeline-role">Research Intern</h4>
                   <div class="timeline-org">Global Climate-Change Impact Studies Centre (GCISC) | Islamabad</div>
@@ -661,19 +647,6 @@
                     <li>Developed RUSLE soil erosion tool modeling 3-decade sedimentation in Tarbela Reservoir.</li>
                     <li>Executed mangrove restoration site suitability using Multi-Criteria Decision Making (MCDM).</li>
                     <li>Authored Python GIS toolboxes streamlining automated geoprocessing tasks.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-node"></div>
-                <div class="timeline-card">
-                  <div class="timeline-date">June 2024 – Aug 2024</div>
-                  <h4 class="timeline-role">Cadastral Mapping Intern</h4>
-                  <div class="timeline-org">Gravity Solutions | Rawalpindi</div>
-                  <ul class="timeline-bullets">
-                    <li>Digitized land parcel boundaries & conducted topology error removal.</li>
-                    <li>Developed Python automation scripts for parcel database management.</li>
                   </ul>
                 </div>
               </div>
@@ -690,11 +663,11 @@
 
               <div class="timeline-item">
                 <div class="timeline-node"></div>
-                <div class="timeline-card">
+                <div class="timeline-card card">
                   <div class="timeline-date">2025 – Present</div>
                   <h4 class="timeline-role">Master's in Remote Sensing & GIS</h4>
                   <div class="timeline-org">National University of Sciences & Technology (NUST) | Islamabad</div>
-                  <p style="font-size: 0.85rem; color: var(--text-sub);">
+                  <p class="timeline-note">
                     Advanced spatial analytics, GeoAI applications, satellite radar imagery, and spatial statistics.
                   </p>
                 </div>
@@ -702,20 +675,18 @@
 
               <div class="timeline-item">
                 <div class="timeline-node"></div>
-                <div class="timeline-card">
+                <div class="timeline-card card">
                   <div class="timeline-date">2021 – 2025</div>
                   <h4 class="timeline-role">BS Geoinformatics</h4>
                   <div class="timeline-org">PMAS Arid Agriculture University | Rawalpindi</div>
-                  <p style="font-size: 0.85rem; color: var(--accent-emerald); font-weight: 700; margin-bottom: 0.4rem;">
+                  <p class="timeline-focus">
                     Focus: GeoAI & Spatial Decision Support
                   </p>
-                  <p style="font-size: 0.85rem; color: var(--text-sub);">
+                  <p class="timeline-note">
                     <strong>Thesis:</strong> Developing a Web-Based Tool for Spatio-Temporal Crop Mapping using Sentinel
                     Imagery in Punjab Region.
                   </p>
                 </div>
-              </div>
-
               </div>
 
             </div>
@@ -735,87 +706,81 @@
 
         <div class="certs-grid">
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">University of Toronto | Coursera</div>
               <h3 class="cert-title">Introduction to GIS Mapping</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Fundamentals of map design, coordinate systems,
+              <p class="cert-desc">Fundamentals of map design, coordinate systems,
                 and vector layer analysis.</p>
             </div>
             <a href="https://drive.google.com/file/d/1QQFBG7BORyUfvZZ0ySYHMRp8w1-8amvq/view?usp=drive_link"
               target="_blank" class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">UC Davis | Coursera</div>
               <h3 class="cert-title">Fundamentals of GIS</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Geospatial data structures, raster operations, and
+              <p class="cert-desc">Geospatial data structures, raster operations, and
                 spatial query design.</p>
             </div>
             <a href="https://drive.google.com/file/d/1SJeijTx9WtmqZAL6fQ-Gr2FQwyHF78sE/view?usp=sharing" target="_blank"
               class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">ESRI MOOC</div>
               <h3 class="cert-title">Going Places With Spatial Analysis</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Spatial analysis workflows, suitability modeling,
+              <p class="cert-desc">Spatial analysis workflows, suitability modeling,
                 and proximity algorithms.</p>
             </div>
             <a href="https://drive.google.com/file/d/13ES7v01DLFHZfuc7V5Em5ur0TqGy15td/view?usp=drive_link"
               target="_blank" class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">ESRI MOOC</div>
               <h3 class="cert-title">Make An Impact with Modern GeoApps</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Building web applications using Experience
+              <p class="cert-desc">Building web applications using Experience
                 Builder, Web AppBuilder, and ArcGIS Online.</p>
             </div>
             <a href="https://drive.google.com/file/d/1UW4I7FyjrpURtkQ4UJDFHI-kTczuzSIK/view?usp=drive_link"
               target="_blank" class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">ESRI MOOC</div>
               <h3 class="cert-title">Spatial Data Science: The New Frontier</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Advanced spatial machine learning, cluster
+              <p class="cert-desc">Advanced spatial machine learning, cluster
                 analysis, and Python spatial statistics.</p>
             </div>
             <a href="https://drive.google.com/file/d/1yhj7vZl7AhvfBxAj4f9EsmurK8vHNh2d/view?usp=drive_link"
               target="_blank" class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
-          <div class="cert-card">
+          <div class="cert-card card">
             <div>
               <div class="cert-issuer-badge">PMAS Arid Agriculture University</div>
               <h3 class="cert-title">Basics of AUTOCAD Civil 3D</h3>
-              <p style="font-size: 0.825rem; color: var(--text-sub);">Civil infrastructure surface modeling, alignments,
+              <p class="cert-desc">Civil infrastructure surface modeling, alignments,
                 and grading techniques.</p>
             </div>
             <a href="https://drive.google.com/file/d/1hZjRfWxEchw2CgfJsi5Zcum1Y8TZMy-3/view?usp=drive_link"
               target="_blank" class="cert-link">
-              <i class="fa-solid fa-file-contract"></i> View Certificate <i class="fa-solid fa-external-link"
-                style="font-size:0.7rem;"></i>
+              <i class="fa-solid fa-file-contract"></i> View Certificate
             </a>
           </div>
 
@@ -833,7 +798,7 @@
 
         <div class="skills-grid">
 
-          <div class="skill-category-card">
+          <div class="skill-category-card card">
             <h3 class="skill-category-title"><i class="fa-solid fa-earth-americas"></i> GIS & RS Software</h3>
             <div class="skill-chips">
               <span class="skill-chip">ArcGIS Pro</span>
@@ -848,7 +813,7 @@
             </div>
           </div>
 
-          <div class="skill-category-card">
+          <div class="skill-category-card card">
             <h3 class="skill-category-title"><i class="fa-solid fa-code"></i> Programming & SDKs</h3>
             <div class="skill-chips">
               <span class="skill-chip">Python</span>
@@ -863,7 +828,7 @@
             </div>
           </div>
 
-          <div class="skill-category-card">
+          <div class="skill-category-card card">
             <h3 class="skill-category-title"><i class="fa-solid fa-brain"></i> GeoAI & Databases</h3>
             <div class="skill-chips">
               <span class="skill-chip">PyTorch (YOLOv5)</span>
@@ -875,7 +840,7 @@
             </div>
           </div>
 
-          <div class="skill-category-card">
+          <div class="skill-category-card card">
             <h3 class="skill-category-title"><i class="fa-solid fa-chart-line"></i> Web Viz & Tools</h3>
             <div class="skill-chips">
               <span class="skill-chip">Leaflet.js</span>
@@ -907,28 +872,29 @@
           <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
           <h2 class="section-title">Let's Collaborate On Your Next <br><span class="text-gradient">Geospatial / GeoAI
               Project</span></h2>
-          <p style="color: var(--text-sub); max-width: 600px; margin: 0 auto;">
-            Available for GIS Analyst, GeoAI Engineering, Spatial Software Development, and Research roles worldwide.
+          <p class="contact-desc">
+            Currently building web GIS at HeraldX. Open to collaborations, consulting, and research partnerships
+            in Web GIS, GeoAI, and remote sensing.
           </p>
 
           <div class="contact-links-row">
             <a href="mailto:malik.taimoor2001@gmail.com" class="contact-item">
-              <i class="fa-solid fa-envelope" style="color: var(--accent-emerald);"></i>
+              <i class="fa-solid fa-envelope"></i>
               <span>malik.taimoor2001@gmail.com</span>
             </a>
 
             <a href="tel:+923035532667" class="contact-item">
-              <i class="fa-solid fa-phone" style="color: var(--accent-teal);"></i>
+              <i class="fa-solid fa-phone"></i>
               <span>(+92) 303 5532667</span>
             </a>
 
             <a href="https://www.linkedin.com/in/m-taimoor-ashfaq-b79835257/" target="_blank" class="contact-item">
-              <i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i>
+              <i class="fa-brands fa-linkedin"></i>
               <span>LinkedIn Profile</span>
             </a>
 
             <a href="https://github.com/tcantbenormal" target="_blank" class="contact-item">
-              <i class="fa-brands fa-github" style="color: var(--text-main);"></i>
+              <i class="fa-brands fa-github"></i>
               <span>github.com/tcantbenormal</span>
             </a>
           </div>
@@ -939,7 +905,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>© 2026 Muhammad Taimoor Ashfaq Malik (tcantbenormal). Built for GitHub Pages.</p>
+        <p>© 2026 Muhammad Taimoor Ashfaq Malik (tcantbenormal). Web GIS Developer, Islamabad.</p>
       </div>
     </footer>
 
