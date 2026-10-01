@@ -175,6 +175,24 @@ img { display: block; max-width: 100%; }
     radial-gradient(40% 40% at 90% 80%, rgba(180, 83, 9, 0.06), transparent 70%);
 }
 
+.hero-field {
+  position: absolute; inset: 0; z-index: -1;
+  display: grid; grid-template-columns: repeat(28, 1fr); grid-auto-rows: 1fr;
+  pointer-events: none; overflow: hidden;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(70% 70% at 50% 50%, #000 30%, transparent 100%);
+}
+.hero-field i { display: flex; align-items: center; justify-content: center; opacity: 0.18; }
+.hero-field i::before {
+  content: ''; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent);
+  transform: scale(calc(1 + var(--p, 0)));
+  transition: transform 0.25s ease-out;
+}
+
+.hero-title .w { display: inline-block; white-space: nowrap; }
+.hero-title .ch { display: inline-block; }
+
 .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 3.5rem; align-items: center; }
 
 .status-badge {
